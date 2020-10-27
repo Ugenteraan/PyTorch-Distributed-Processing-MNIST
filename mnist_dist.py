@@ -52,6 +52,7 @@ class ConvNet(nn.Module):
 
 
 def train(gpu, args):
+    print("GPU:",gpu)
     rank = args.nr * args.gpus + gpu
     dist.init_process_group(backend='nccl', init_method='env://', world_size=args.world_size, rank=rank)
     torch.manual_seed(0)
