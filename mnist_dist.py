@@ -23,8 +23,8 @@ def main():
                         help='number of total epochs to run')
     args = parser.parse_args()
     args.world_size = args.gpus * args.nodes
-    # os.environ['MASTER_ADDR'] = '10.57.23.164'
-    # os.environ['MASTER_PORT'] = '8888'
+    os.environ['MASTER_ADDR'] = '10.106.15.226'
+    os.environ['MASTER_PORT'] = '8888'
     mp.spawn(train, nprocs=args.gpus, args=(args,))
 
 
