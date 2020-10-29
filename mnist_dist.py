@@ -1,3 +1,7 @@
+'''
+The code here is taken from : https://github.com/yangkky/distributed_tutorial/blob/master/src/mnist-distributed.py
+'''
+
 import os
 from datetime import datetime
 import argparse

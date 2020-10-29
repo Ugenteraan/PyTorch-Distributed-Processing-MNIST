@@ -67,5 +67,6 @@ The DDP module, when used on multiple nodes that are in the same network, it exp
 1) https://www.telesens.co/2019/04/04/distributed-data-parallel-training-using-pytorch-on-aws/
 2) https://pytorch.org/docs/master/notes/ddp.html
 3) https://pytorch.org/docs/master/generated/torch.nn.DataParallel.html#torch.nn.DataParallel
+4) https://yangkky.github.io/2019/07/08/distributed-pytorch-tutorial.html
 
 
