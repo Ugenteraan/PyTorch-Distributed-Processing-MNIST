@@ -61,7 +61,10 @@ There are a few inefficiencies in this first approach.
 **++Optimization++**
 The Optimizer sees optimizing the model as a local process since all the models are in sync and there is no need for further communication among the models.
 
-The DDP module, when used on multiple nodes that are in the same network, it expects that the training scripts are explicitly launched on every node manually. Since the module has the information on how many nodes and GPUs are there, the training would not start until all the GPUs are present.
+The DDP module, when used on multiple nodes that are in the same network, it expects that the training scripts are explicitly launched on every node manually. Since the module has the information on how many nodes and GPUs are there, the training would not start until all the GPUs are present. 
+
+**IMPORTANT NOTE**
+Keep in mind that if Batch Normalization layers are used in the model, the parameters of these layers would not be the same across all the models in all the GPU since the parameters is dependent on the data used. Therefore, use SyncBatchNorm (https://pytorch.org/docs/stable/generated/torch.nn.SyncBatchNorm.html).
 
 **Source**
 1) https://www.telesens.co/2019/04/04/distributed-data-parallel-training-using-pytorch-on-aws/
